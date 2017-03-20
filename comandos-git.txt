@@ -1,0 +1,30 @@
+git config --global http.proxy http://proxy.wifi.uma.es:3128 "Configuramos la red proxy"
+git clone https://github.com/PabloCorralFranco/umafactorial.git "Cargamos el repositorio" item 1
+git config user.name PabloCorralFranco "Nos logeamos con nombre y correo"
+git config user.email pablocorralfranco@gmail.com
+cd umafactorial "Nos movemos al lugar del repositorio local"
+touch factorial.java "Creamos el archivo con el que vamos a trabajar" item 2
+git add factorial.java , git commit -m "implementacion inicial" item 3 "Guardamos los cambios en el stage y le hacemos commit
+git add factorial.java , git commit -m "refactorizacion" item 4
+git push origin master item 5
+gitk --all
+git checkout -b recursivo "Creamos una nueva rama y saltamos directamente a ella gracias al -b" item 5
+git add factorial.java , git commit -m "implementacion recursiva" item 7
+git push origin recursivo "subimos la rama recursiva al repositorio" item 7
+git checkout master "Cambiamos a la rama master" item 8
+git add factorial.java , git commit -m "Correccion de numeros negativos" item 10
+git checkout recursivo , git add factorial.java , git commit -m "optimizacion" item 11
+git checkout master , git merge recursivo item 12
+git checkout -b refacIO "Creamos nueva rama y saltamos" item 13
+git add factorial.java , git commit -m "refactorizacion de metodo de entrada" item 14
+git stash "Como no podemos guardar los cambios lo guardamos en una especie de pila" item 15
+git checkout master item 15
+git add factorial.java , git commit -m "cambio de long a BigInteger" , git checkout refacIO item 16
+git stash pop "sacamos lo que teniamos en el stash ahora que podemos seguir implementando cambios" item 16
+git add factorial.java , git commit -m "refactorizacion de metodo de salida" item 16
+git checkout master , git merge refacIO "desde la rama master hacemos merge con la rama refacIO" item 17
+git add factorial.java , git commit -m "mezcla de rama refacIO" "una vez solucionados los problemas en el merging volvemos a hacer un commit con los cambios" item 19
+git push origin master "Subimos al repositorio los cambios realizados" item 19
+touch comandos-git.txt item 20
+git add comandos-git.txt , git commit -m "adicion de historial de linea de comandos" item 21
+git push --all origin "Sincronizamos todas las ramas del repositorio local con github" item 22
